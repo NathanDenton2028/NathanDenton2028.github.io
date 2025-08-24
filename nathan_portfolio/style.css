@@ -1,0 +1,173 @@
+/*
+ * Stylesheet for Nathan Denton’s portfolio site.
+ * Defines the colour palette, layout and responsive behaviour.
+ */
+
+/* Colour variables for easy theming */
+:root {
+  --primary-color: #0367a6;
+  --secondary-color: #023e8a;
+  --accent-color: #0096c7;
+  --light-bg: #f5f7fb;
+  --text-color: #333;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-bg);
+}
+
+header {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.header-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.headshot {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.intro {
+  flex: 1;
+  min-width: 250px;
+}
+
+.intro h1 {
+  margin: 0 0 10px;
+  font-size: 2.4rem;
+}
+
+.intro p {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.contact-info {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.contact-info li {
+  margin-bottom: 4px;
+}
+
+main {
+  padding: 40px 20px;
+}
+
+#projects {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#projects h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+/* Project cards layout */
+.project-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Cards without an image use a decorative coloured bar at the top */
+.project-card.no-image .no-image-header {
+  height: 200px;
+  width: 100%;
+  background: linear-gradient(135deg, #0096c7 0%, #023e8a 100%);
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-content h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.project-content .summary {
+  margin-bottom: 16px;
+}
+
+.toggle-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.toggle-btn:hover,
+.toggle-btn:focus {
+  background-color: var(--secondary-color);
+  outline: none;
+}
+
+/* Hidden details section */
+.project-details {
+  display: none;
+  background-color: #f1f5f9;
+  padding: 15px 20px;
+  border-radius: 4px;
+  margin-top: -10px;
+}
+
+.project-details.show {
+  display: block;
+}
+
+/* Responsive grid for medium to large screens */
+@media (min-width: 768px) {
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+}
